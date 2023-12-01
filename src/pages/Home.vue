@@ -29,15 +29,15 @@ const openModal = () => {
 
 const handleInputTitleChange = () => {
   // Handle the input change
-  if(inputTitleValue!=="")
-  router.push({ path: '/products/search', query: { q:inputTitleValue} });
+  if(inputTitleValue.value !=="")
+  router.push({ path: '/products/search', query: { q:inputTitleValue.value } });
   else
   router.push({ path: '/products', query: { limit:10, skip:0} });
 };
 const handleInputBrandChange = () => {
   // Handle the input change
-  if(inputBrandValue!=="")
-  router.push({ path: '/products/search', query: { q:inputBrandValue} });
+  if(inputBrandValue.value !=="")
+  router.push({ path: '/products/search', query: { q:inputBrandValue.value } });
   else
   router.push({ path: '/products', query: { limit:10, skip:0} });
 };
