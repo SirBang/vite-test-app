@@ -116,7 +116,7 @@ export default {
       this.updateQuery();
     },
     showItem(id){
-      this.$router.push({ path: '/products/'+id});
+      this.$router?.push({ path: '/products/'+id});
     },
     setDataToStore(prodata) {
       
