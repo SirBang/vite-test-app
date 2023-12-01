@@ -7,7 +7,7 @@ describe("Home.vue", () => {
     test("Home the correct style for error",async () => {
         const wrapper = mount(Home);
         await wrapper.vm.$nextTick();
-        // expect(wrapper.findAll("tr")).toHaveLength(10);
+        
     });
    
 });

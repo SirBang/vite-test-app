@@ -71,7 +71,6 @@ export default {
   },
   methods: {
     fetchData(route){
-    
       fetchHelper(route.fullPath, {
             method: 'GET',
           })
