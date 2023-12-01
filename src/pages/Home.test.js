@@ -4,10 +4,8 @@ import { describe, expect, test,it } from "vitest";
 
 describe("Home.vue", () => {
     
-    test("Home the correct style for error",async () => {
+    test("Home the correct style for error", () => {
         const wrapper = mount(Home);
-        await wrapper.vm.$nextTick();
-        
     });
    
 });

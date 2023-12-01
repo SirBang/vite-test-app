@@ -5,7 +5,7 @@ import { describe, expect, test,it } from "vitest";
 describe("ModalContent.vue", () => {
     
     test("ModalContent the correct style for error", () => {
-        const wrapper = mount(ModalContent)
+        const wrapper = mount(ModalContent);
     });
    
 });

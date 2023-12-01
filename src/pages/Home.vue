@@ -21,16 +21,16 @@ const openModal = () => {
 const handleInputTitleChange = () => {
   // Handle the input change
   if(inputTitleValue.value !=="")
-  router.push({ path: '/products/search', query: { q:inputTitleValue.value.trim() } });
+  router?.push({ path: '/products/search', query: { q:inputTitleValue.value.trim() } });
   else
-  router.push({ path: '/products', query: { limit:10, skip:0} });
+  router?.push({ path: '/products', query: { limit:10, skip:0} });
 };
 const handleInputBrandChange = () => {
   // Handle the input change
   if(inputBrandValue.value !=="")
-  router.push({ path: '/products/search', query: { q:inputBrandValue.value.trim() } });
+  router?.push({ path: '/products/search', query: { q:inputBrandValue.value.trim() } });
   else
-  router.push({ path: '/products', query: { limit:10, skip:0} });
+  router?.push({ path: '/products', query: { limit:10, skip:0} });
 };
 </script>
 
@@ -46,7 +46,8 @@ const handleInputBrandChange = () => {
         </div>
         <div class="md:w-2/3">
           <input placeholder="Enter Title" v-model="inputTitleValue" @input="handleInputTitleChange"
-             class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-title" type="text">
+             class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
+             id="inline-title" type="text">
         </div>
       </div>
       <div class="md:flex md:items-center mb-6">

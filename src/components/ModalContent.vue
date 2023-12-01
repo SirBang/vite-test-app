@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useStore } from 'vuex';
-import {computed,ref } from "vue";
+import {computed } from "vue";
 
 const store = useStore();
 const productData = computed(() => store?.getters?.getData);
