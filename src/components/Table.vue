@@ -82,8 +82,8 @@ export default {
                 this.total = data.total;
                 this.itemsPerPage = data.limit;
               }else{
-                this.setDataToStore(data);
-                this.openModal();
+                this.$store.dispatch('setData', data);
+                this.$store.dispatch('updateModal', true);
               }
               
             })
@@ -117,10 +117,6 @@ export default {
     },
     showItem(id){
       this.$router?.push({ path: '/products/'+id});
-    },
-    setDataToStore(prodata) {
-      
-      this.$store.dispatch('setData', prodata);
     }
   },
 };
