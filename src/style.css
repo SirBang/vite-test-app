@@ -1,0 +1,14 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  padding: 0px;
+  margin: 0px;
+  height: 100vh;
+}
+
+#app{
+  height: 100%;
+}
