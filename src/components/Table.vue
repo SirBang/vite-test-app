@@ -97,7 +97,7 @@ export default {
     updateQuery() {
       this.isLoading = true;
       const start = (this.currentPage - 1) * this.itemsPerPage;
-      this.$router.push({ path: '/products', query: { limit:this.itemsPerPage, skip:start} });
+      this.$router?.push({ path: '/products', query: { limit:this.itemsPerPage, skip:start} });
     },
     previousPage() {
       if (this.currentPage > 1) {

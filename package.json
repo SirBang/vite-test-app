@@ -14,7 +14,7 @@
     "@fortawesome/fontawesome-free": "^6.4.2",
     "happy-dom": "^12.10.3",
     "vue": "^3.3.8",
-    "vue-final-modal": "^4.4.6",
+    "vue-final-modal": "^3.4.11",
     "vue-router": "^4.0.13",
     "vuex": "^4.1.0"
   },

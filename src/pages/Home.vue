@@ -1,7 +1,8 @@
 <script setup>
 
 import Table from "../components/table.vue"
-import { ModalsContainer, useModal } from 'vue-final-modal'
+// import { ModalsContainer, useModal } from 'vue-final-modal'
+
 import ModalContent from "../components/ModalContent.vue";
 import { ref} from 'vue';
 import { useRouter } from 'vue-router';
@@ -12,20 +13,38 @@ defineProps({
 
 const router = useRouter();
 // const productData = computed(() => store.getters.getData);
-const { open, close } = useModal({
-    component: ModalContent,
-    attrs: {
-      onConfirm() {
-        close()
-      },
-    }
-})
+// const { open, close } = useModal({
+//     component: ModalContent,
+//     attrs: {
+//       onConfirm() {
+//         close()
+//       },
+//     }
+// })
 
 const inputTitleValue = ref('');
 const inputBrandValue = ref('');
+
+
 const openModal = () => {
-  open();
+  // open();
 };
+
+const clickOutside = ()=> {
+  alert('click-outside')
+}
+const beforeOpen = () =>{
+  alert('beforeOpen')
+}
+const opened = () =>{
+  alert('opened')
+}
+const beforeClose = ()=> {
+  alert('beforeClose')
+}
+const closed = () =>{
+  alert('closed')
+}
 
 const handleInputTitleChange = () => {
   // Handle the input change
@@ -70,9 +89,18 @@ const handleInputBrandChange = () => {
         </div>
       </div>
     </div>
-    
-    <ModalsContainer/>
-    
+      <custom-modal
+        v-model="showModal"
+        @click-outside="clickOutside"
+        @before-open="beforeOpen"
+        @opened="opened"
+        @before-close="beforeClose"
+        @closed="closed"
+        @cancel="showModal = false"
+      >
+        <template #title>Events Example!</template>
+      </custom-modal>
+      <v-button highlight @click="showModal = true">Open modal</v-button>
     <Table :openModal="openModal"/>
   </div>
 </template>
