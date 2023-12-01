@@ -1,6 +1,6 @@
 <script setup>
 
-import Table from "../components/table.vue"
+import Table from "../components/Table.vue"
 import ModalContent from "../components/ModalContent.vue";
 import { ref} from 'vue';
 import { useRouter } from 'vue-router';
