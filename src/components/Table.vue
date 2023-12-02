@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="caret-transparent">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
       <thead>
         <tr>
@@ -7,7 +7,7 @@
         </tr>
       </thead>
       <tbody v-if="items.length>0">
-        <tr v-for="item in displayedItems" :key="item.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 cursor-pointer">
+        <tr v-for="item in displayedItems" :key="item.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 cursor-pointer caret-transparent">
           <td 
             :class="header === 'Title' ? 'text-blue-500' : ''" 
             v-for="(header, index) in headers" 
