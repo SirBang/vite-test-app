@@ -2,7 +2,7 @@
 
 import Table from "../components/Table.vue"
 import ModalContent from "../components/ModalContent.vue";
-import { ref} from 'vue';
+import { ref,computed} from 'vue';
 import { useRouter } from 'vue-router';
 
 defineProps({
@@ -12,11 +12,22 @@ defineProps({
 const router = useRouter();
 const inputTitleValue = ref('');
 const inputBrandValue = ref('');
+const brand_sort = ref(false);
+const title_sort = ref(false);
 
-const openModal = () => {
-  // open();
+const BrandSort = () => {
+    brand_sort.value = !brand_sort.value;
+};
+const TitleSort = () => {
+    title_sort.value = !title_sort.value;
 };
 
+const titleSortIcon = computed(() => {
+  return title_sort.value ? 'up-a-z' : 'down-z-a';
+});
+const brandSortIcon = computed(() => {
+  return brand_sort.value ? 'up-a-z' : 'down-z-a';
+});
 
 const handleInputTitleChange = () => {
   // Handle the input change
@@ -40,7 +51,8 @@ const handleInputBrandChange = () => {
     <div class="flex w-full">
       <div class="md:flex md:items-center mb-6">
         <div class="md:w-1/3">
-          <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-title">
+          <label @click="TitleSort" class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-title">
+            <i :class="`fa-solid fa-arrow-${titleSortIcon}`"></i>
             Title
           </label>
         </div>
@@ -52,7 +64,9 @@ const handleInputBrandChange = () => {
       </div>
       <div class="md:flex md:items-center mb-6">
         <div class="md:w-1/3">
-          <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-brand">
+          <label @click="BrandSort"
+              class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-brand">
+            <i :class="`fa-solid fa-arrow-${brandSortIcon}`"></i>
             Brand
           </label>
         </div>
@@ -64,6 +78,6 @@ const handleInputBrandChange = () => {
     </div>
     
     <ModalContent/>
-    <Table :openModal="openModal"/>
+    <Table :brand_sort="brand_sort" :title_sort="title_sort"/>
   </div>
 </template>

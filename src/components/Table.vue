@@ -40,7 +40,7 @@
 <script>
 import { fetchHelper } from '../helper/fetchHelper';
 export default {
-  props:['openModal'],
+  props:['title_sort','brand_sort'],
   data() {
     return {
       headers: ["Id","Title", "Category", "Brand", "Price", "Stock", "Rating"],
@@ -67,6 +67,21 @@ export default {
   watch: {
   '$route'(to, from) {
       this.fetchData(to);
+    },
+  "title_sort"(newValue,oldValue){
+      this.items.sort((a, b) => a.brand.localeCompare(b.title));
+      if(!this.title_sort)
+      {
+        this.items.reverse();
+      }
+      
+    },
+    "brand_sort"(){
+      this.items.sort((a, b) => a.brand.localeCompare(b.brand));
+      if(!this.brand_sort)
+      {
+        this.items.reverse();
+      }
     }
   },
   methods: {
