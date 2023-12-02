@@ -19,7 +19,7 @@ const emit = defineEmits<{
       <button class="modal__close" @click="store.dispatch('updateModal', false);">
         <mdi-close></mdi-close>
       </button>
-      <span class="modal__title">Hello, vue-final-modal</span>
+      <span class="modal__title">{{productData?.title}}</span>
       <div class="modal__content">
         <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <a href="#">
@@ -27,7 +27,7 @@ const emit = defineEmits<{
           </a>
           <div class="px-5 pb-5">
               <a href="#">
-                  <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{productData?.title}}</h5>
+                  <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{productData?.brand}}</h5>
               </a>
               <p>{{productData?.description}}</p>
               <div class="flex items-center mt-2.5 mb-5">
