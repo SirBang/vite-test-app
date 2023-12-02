@@ -7,7 +7,7 @@
         </tr>
       </thead>
       <tbody v-if="items.length>0">
-        <tr v-for="item in displayedItems" :key="item.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+        <tr v-for="item in displayedItems" :key="item.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 cursor-pointer">
           <td 
             :class="header === 'Title' ? 'text-blue-500' : ''" 
             v-for="(header, index) in headers" 
